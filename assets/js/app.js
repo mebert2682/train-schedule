@@ -60,7 +60,7 @@ database.ref().on("child_added", function(childSnapshot) {
   var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
   var tRemainder = diffTime % freq;
   var minutesAway = freq - tRemainder;
-  var nextArrival = moment(nextArrival).format('hh:mm a')
+  var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm a");
 
   // Calculate the months worked using hardcore math
   // To calculate the months worked
